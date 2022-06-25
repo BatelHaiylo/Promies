@@ -185,13 +185,12 @@ async function fetchAnime(){
     loading.innerHTML = `<img style = 'width:20vw' src ='/gif/loading.gif'/>`
     try{
         await fetch("https://api.jikan.moe/v4/anime")
-        .then(response => {return response.json()})
-        .then(res => {document.getElementById("printPromise1").innerText =`${res.data.length}`})
-        .then(res => {console.log(res.data)})
+        .then(response => {return response.json()}).then(res => {console.log(res.data)
+        document.getElementById("printPromise1").innerText =`${res.data.length}`})
 
 }  
   catch(err){
-        alert(err)
+        alert("somthing went wrong")
     } 
     finally{
         btn.disabled = false
